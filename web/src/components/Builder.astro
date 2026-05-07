@@ -1,0 +1,58 @@
+---
+const sizes = [
+  { t: 'Talla M', d: '1 carne · 1 salsa' },
+  { t: 'Talla L', d: '2 carnes · 2 salsas' },
+  { t: 'Talla XL', d: '3 carnes · 3 salsas' }
+];
+const carnes = ['Pollo Marinado', 'Carne Picada', 'Merguez', 'Cordon Bleu', 'Nuggets', 'Tenders (+1€)', 'Carne Kebab'];
+const salsas = ['Algeriana', 'Chili-Thai', 'Samurai', 'Al Andalus', 'BBQ', 'Brazil', 'Tasty', 'Ketchup', 'Mayonesa', 'Biggie'];
+const extras = ['Cebolla Caramelizada', 'Queso Cheddar', 'Champiñones', 'Jeringuillas de Queso (+2€)', 'Bowl de Queso (+3€)', 'Bacon Pavo', 'Bacon Ternera'];
+const gratinados = ['Mozzarella', 'Queso de Cabra', 'Queso Cheddar'];
+---
+<section class="builder checker" id="crea-tu-taco">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Hazlo a tu manera</span>
+      <h2>Crea tu propio <span class="scribble-circle">taco</span></h2>
+      <p>Tres pasos, infinitas combinaciones. Tú eliges tamaño, carnes y salsas — y le añades todos los extras que quieras.</p>
+    </div>
+
+    <div class="builder__steps">
+      <article class="step">
+        <span class="step__num">#1</span>
+        <h3>Elige el tamaño</h3>
+        <div class="chips">
+          {sizes.map(s => <span class="chip"><strong>{s.t}</strong> · {s.d}</span>)}
+        </div>
+      </article>
+
+      <article class="step">
+        <span class="step__num">#2</span>
+        <h3>Elige las carnes</h3>
+        <div class="chips">
+          {carnes.map(c => <span class="chip">{c}</span>)}
+        </div>
+      </article>
+
+      <article class="step">
+        <span class="step__num">#3</span>
+        <h3>Elige las salsas</h3>
+        <div class="chips">
+          {salsas.map(s => <span class="chip chip--sauce">{s}</span>)}
+        </div>
+      </article>
+
+      <article class="step">
+        <span class="step__num">#4</span>
+        <h3>Añade extras <small style="font-weight:600;color:#6a5e8a;font-size:13px;">(+1€)</small></h3>
+        <div class="chips" style="margin-bottom:14px;">
+          {extras.map(e => <span class="chip chip--extra">{e}</span>)}
+        </div>
+        <h3 style="font-size:16px;margin-top:18px;">Gratinados <small style="font-weight:600;color:#6a5e8a;font-size:13px;">(+1€)</small></h3>
+        <div class="chips">
+          {gratinados.map(g => <span class="chip">{g}</span>)}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -3,6 +3,10 @@
   --purple-deep: #3D2D7A;
   --purple-light: #7A63D4;
   --purple-soft: #EFEAFF;
+  --check-1: #E8E2F5;
+  --check-2: #F5F1FF;
+  --check-dark-1: #6A55C0;
+  --check-dark-2: #5742A7;
   --yellow: #FFD23F;
   --orange: #FF7A1A;
   --cream: #FFF8EC;
@@ -12,6 +16,43 @@
   --shadow: 0 12px 40px -12px rgba(36, 18, 90, 0.35);
   --max: 1200px;
 }
+
+/* Brand checkerboard pattern (mirrors official carta backgrounds) */
+.checker {
+  background-color: var(--check-2);
+  background-image:
+    linear-gradient(45deg, var(--check-1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--check-1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--check-1) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--check-1) 75%);
+  background-size: 56px 56px;
+  background-position: 0 0, 0 28px, 28px -28px, -28px 0;
+}
+.checker--dark {
+  background-color: var(--check-dark-2);
+  background-image:
+    linear-gradient(45deg, var(--check-dark-1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--check-dark-1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--check-dark-1) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--check-dark-1) 75%);
+  background-size: 56px 56px;
+  background-position: 0 0, 0 28px, 28px -28px, -28px 0;
+  color: var(--white);
+}
+.scribble-circle {
+  position: relative;
+  display: inline-block;
+}
+.scribble-circle::before {
+  content: '';
+  position: absolute;
+  inset: -8px -16px;
+  border: 3px solid var(--purple);
+  border-radius: 60% 40% 50% 50% / 50% 50% 45% 55%;
+  pointer-events: none;
+  transform: rotate(-2deg);
+}
+.checker--dark .scribble-circle::before { border-color: var(--yellow); }
 
 * { box-sizing: border-box; }
 
@@ -193,7 +234,8 @@ section { padding: 90px 0; }
 .section-head p { color: #4a4365; max-width: 640px; margin: 0 auto; line-height: 1.6; }
 
 /* Story */
-.story { background: var(--white); }
+.story { background: var(--white); position: relative; }
+.story.checker { background-color: var(--check-2); }
 .story__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -220,6 +262,48 @@ section { padding: 90px 0; }
   font-size: 13px;
 }
 @media (max-width: 820px) { .story__grid { grid-template-columns: 1fr; } }
+
+/* Builder (Crea tu taco) */
+.builder { padding: 90px 0; position: relative; }
+.builder__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.step {
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 22px 22px 26px;
+  box-shadow: 0 6px 0 var(--ink);
+  position: relative;
+}
+.step__num {
+  position: absolute;
+  top: -18px; left: 18px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 22px;
+  padding: 4px 14px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  transform: rotate(-3deg);
+}
+.step h3 { font-size: 22px; margin: 6px 0 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--purple-soft);
+  color: var(--purple-deep);
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  border: 2px solid var(--purple);
+}
+.chip--sauce { background: var(--white); color: var(--ink); border-color: var(--ink); }
+.chip--extra { background: var(--ink); color: var(--cream); border-color: var(--ink); }
 
 /* Menu categories */
 .menu { background: var(--cream); }

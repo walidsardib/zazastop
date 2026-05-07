@@ -1,0 +1,95 @@
+---
+const groups = [
+  {
+    title: 'Crousty',
+    items: [
+      { n: 'Tamaño Normal', p: '7,90€', menu: '+2,50€' },
+      { n: 'Tamaño Gigante', p: '10,90€', menu: '+2,50€' }
+    ]
+  },
+  {
+    title: 'Tacos',
+    items: [
+      { n: 'Talla M', p: '6,90€', menu: '+2,50€' },
+      { n: 'Talla L', p: '7,90€', menu: '+2,50€' },
+      { n: 'Talla XL', p: '10,90€', menu: '+2,50€' }
+    ]
+  },
+  {
+    title: 'Patatas',
+    items: [
+      { n: 'Bacon Cheddar / Queso Cebolla', p: '3,50€' },
+      { n: 'Normales', p: '1,50€' }
+    ]
+  },
+  {
+    title: 'Postres',
+    items: [
+      { n: 'Tiramisú de Oreo', p: '3,00€' },
+      { n: 'Tiramisú de Caramelo', p: '3,00€' },
+      { n: 'Tarta de Queso', p: '3,00€' }
+    ]
+  }
+];
+
+const complementos = [
+  { n: 'Nuggets',         u4: '3,00€', u6: '5,50€' },
+  { n: 'Alitas de pollo', u4: '3,50€', u6: '6,50€' },
+  { n: 'Tenders',         u4: '4,50€', u6: '6,90€' },
+  { n: 'Chilli Bites',    u4: '3,00€', u6: '5,50€' }
+];
+---
+<section class="pricing checker--dark" style="padding:90px 0;">
+  <div class="wrap">
+    <div class="section-head" style="color:#fff;">
+      <span class="eyebrow" style="background:rgba(255,210,63,0.18);color:var(--yellow);">En el local</span>
+      <h2 style="color:#fff;">Lista de <span class="scribble-circle" style="color:#fff;">precios</span></h2>
+      <p style="color:rgba(255,255,255,0.85);">Precios oficiales en tienda · Av. de Madrid 162. Si pides en Glovo aplican tarifas de la app.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;">
+      {groups.map(g => (
+        <div style="background:rgba(255,255,255,0.06);border:2px solid rgba(255,255,255,0.18);border-radius:18px;padding:22px;backdrop-filter:blur(4px);">
+          <h3 style="color:var(--yellow);font-size:24px;margin-bottom:14px;">{g.title}</h3>
+          <ul style="list-style:none;padding:0;margin:0;">
+            {g.items.map(it => (
+              <li style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,0.18);font-size:15px;">
+                <span>{it.n}</span>
+                <span style="font-family:'Archivo Black',sans-serif;color:#fff;">{it.p}{it.menu && <small style="opacity:.6;font-weight:500;margin-left:6px;">menú {it.menu}</small>}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top:24px;background:rgba(255,255,255,0.06);border:2px solid rgba(255,255,255,0.18);border-radius:18px;padding:22px;">
+      <h3 style="color:var(--yellow);font-size:24px;margin-bottom:14px;">Complementos</h3>
+      <table style="width:100%;border-collapse:collapse;color:#fff;">
+        <thead>
+          <tr style="text-align:left;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);">
+            <th style="padding:10px 0;"></th><th style="padding:10px 0;">4 ud</th><th style="padding:10px 0;">6 ud</th>
+          </tr>
+        </thead>
+        <tbody>
+          {complementos.map(c => (
+            <tr style="border-top:1px dashed rgba(255,255,255,0.18);">
+              <td style="padding:11px 0;font-weight:700;">{c.n}</td>
+              <td style="padding:11px 0;font-family:'Archivo Black',sans-serif;">{c.u4}</td>
+              <td style="padding:11px 0;font-family:'Archivo Black',sans-serif;">{c.u6}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:22px;background:rgba(255,255,255,0.06);border:2px solid rgba(255,255,255,0.18);border-radius:18px;padding:22px;">
+      <h3 style="color:var(--yellow);font-size:24px;margin-bottom:14px;">Bebidas</h3>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px;color:#fff;font-size:15px;">
+        <li style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,0.18);"><span>Todas las bebidas</span><span style="font-family:'Archivo Black',sans-serif;">1,80€</span></li>
+        <li style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,0.18);"><span>Coca-Cola, Fanta, Nestea</span><span style="font-family:'Archivo Black',sans-serif;">1,50€</span></li>
+        <li style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,0.18);"><span>Agua</span><span style="font-family:'Archivo Black',sans-serif;">1,00€</span></li>
+      </ul>
+    </div>
+  </div>
+</section>

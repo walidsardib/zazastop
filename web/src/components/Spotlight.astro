@@ -1,20 +1,47 @@
 ---
+const ingredientes = [
+  'Arroz blanco',
+  'Tenders de pollo crujiente',
+  'Salsa secreta de la casa',
+  'Salsa sweet chilli',
+  'Salsa agridulce',
+  'Orégano',
+  'Cebolla crujiente'
+];
 ---
-<section class="spotlight" id="crousty">
+<section class="spotlight checker--dark" id="crousty">
   <div class="wrap spotlight__grid">
     <div class="spotlight__media">
       <img src="/images/products/crousty-normal.jpg" alt="Crousty original de ZazaStop" />
     </div>
     <div>
-      <span style="display:inline-block;background:rgba(255,210,63,0.15);color:var(--yellow);padding:6px 14px;border-radius:999px;font-weight:800;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:14px;">El plato estrella</span>
-      <h2>Conoce el <span class="yellow">Crousty</span></h2>
-      <p>
-        Una bandeja de arroz coronada con pollo rebozado extra crujiente,
-        salsa secreta de la casa, salsa agridulce con sweet chili, cebolla
-        frita y un toque de orégano. El primer Crousty de Zaragoza.
+      <span style="display:inline-block;background:rgba(255,210,63,0.18);color:var(--yellow);padding:6px 14px;border-radius:999px;font-weight:800;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:14px;">El plato estrella</span>
+      <h2><span class="scribble-circle yellow" style="color:var(--yellow);">Crousty</span></h2>
+      <p style="margin-top:18px;">
+        El primer Crousty de Zaragoza. Una bandeja generosa con todo lo bueno —
+        arroz, pollo crujiente y nuestras salsas secretas.
       </p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
-        <a class="btn btn--yellow" href="#menu">Ver tamaños</a>
+
+      <div style="margin:24px 0;">
+        <h3 style="font-size:14px;letter-spacing:0.2em;color:var(--yellow);margin-bottom:12px;">Ingredientes</h3>
+        <div class="chips">
+          {ingredientes.map(i => (
+            <span class="chip" style="background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.4);">{i}</span>
+          ))}
+        </div>
+      </div>
+
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:18px;">
+        <div style="background:var(--yellow);color:var(--ink);padding:10px 16px;border-radius:14px;border:3px solid var(--ink);font-family:'Archivo Black',sans-serif;">
+          Normal · 7,90€
+        </div>
+        <div style="background:var(--white);color:var(--ink);padding:10px 16px;border-radius:14px;border:3px solid var(--ink);font-family:'Archivo Black',sans-serif;">
+          Gigante · 10,90€
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
+        <a class="btn btn--yellow" href="#menu">Ver menú</a>
         <a class="btn btn--ghost" href="https://glovoapp.com/es/es/zaragoza/stores/zaza-stop-zaragoza" target="_blank" rel="noopener">Pedir ahora</a>
       </div>
     </div>
