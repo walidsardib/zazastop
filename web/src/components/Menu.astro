@@ -5,6 +5,7 @@ type Product = {
   name: string;
   description?: string;
   price: number;
+  priceNote?: string;
   category: string;
   slug: string;
   localImage?: string;
@@ -42,7 +43,7 @@ function fmt(p: number) {
             <span class="card__cat">{p.category}</span>
             <h3 class="card__title">{p.name}</h3>
             {p.description && <p class="card__desc">{p.description}</p>}
-            <span class="card__price">{fmt(p.price)}</span>
+            <span class="card__price">{fmt(p.price)}{p.priceNote && <small style="font-weight:500;font-size:11px;margin-left:6px;opacity:.7;">{p.priceNote}</small>}</span>
           </div>
         </article>
       ))}
