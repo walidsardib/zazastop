@@ -14,7 +14,7 @@ const {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#5742A7" />
     <link rel="icon" type="image/jpeg" href="/images/brand/logo.jpg" />
@@ -29,5 +29,53 @@ const {
   </head>
   <body>
     <slot />
+    <a href="https://glovoapp.com/es/es/zaragoza/stores/zaza-stop-zaragoza" target="_blank" rel="noopener" class="float-cta" aria-label="Pedir en Glovo">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18l-2 13H5L3 3z"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+      Pedir
+    </a>
+
+    <script>
+      // Reveal on scroll
+      const items = document.querySelectorAll<HTMLElement>('.reveal, .stagger');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      items.forEach(el => io.observe(el));
+
+      // Sticky nav scrolled state
+      const nav = document.querySelector<HTMLElement>('.nav');
+      const onScroll = () => {
+        if (!nav) return;
+        nav.classList.toggle('is-scrolled', window.scrollY > 8);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Mobile nav toggle
+      const toggle = document.querySelector<HTMLButtonElement>('.nav__toggle');
+      toggle?.addEventListener('click', () => {
+        nav?.classList.toggle('is-open');
+        const open = nav?.classList.contains('is-open');
+        toggle.setAttribute('aria-expanded', String(!!open));
+      });
+      // Close drawer on link click
+      document.querySelectorAll('.nav__links a').forEach(a => {
+        a.addEventListener('click', () => nav?.classList.remove('is-open'));
+      });
+
+      // Subtle parallax on hero media
+      const heroMedia = document.querySelector<HTMLElement>('.hero__media');
+      if (heroMedia && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        window.addEventListener('scroll', () => {
+          const y = Math.min(window.scrollY, 600);
+          heroMedia.style.transform = `rotate(${2 - y * 0.005}deg) translateY(${y * 0.06}px)`;
+        }, { passive: true });
+      }
+    </script>
   </body>
 </html>

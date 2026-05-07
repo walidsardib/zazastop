@@ -47,7 +47,7 @@ const complementos = [
       <p style="color:rgba(255,255,255,0.85);">Precios oficiales en tienda · Av. de Madrid 162. Si pides en Glovo aplican tarifas de la app.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;">
+    <div class="stagger" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;">
       {groups.map(g => (
         <div style="background:rgba(255,255,255,0.06);border:2px solid rgba(255,255,255,0.18);border-radius:18px;padding:22px;backdrop-filter:blur(4px);">
           <h3 style="color:var(--yellow);font-size:24px;margin-bottom:14px;">{g.title}</h3>

@@ -33,7 +33,7 @@ function fmt(p: number) {
       {categories.map(c => <button class="cat-btn" data-cat={c}>{c}</button>)}
     </div>
 
-    <div class="grid" id="menu-grid">
+    <div class="grid stagger" id="menu-grid">
       {products.map(p => (
         <article class="card" data-cat={p.category}>
           <div class="card__img">
