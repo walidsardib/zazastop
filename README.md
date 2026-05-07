@@ -3,25 +3,28 @@
 Sitio web del restaurante **ZazaStop** — tacos franceses y Crousty en Zaragoza.
 Av. de Madrid 162 · Las Delicias · Zaragoza.
 
-Construido con [Astro](https://astro.build) + TypeScript. Datos de menú e
-imágenes de producto extraídos del listing público de Glovo.
+Construido con [Astro](https://astro.build) + TypeScript.
 
 ## Estructura
 
 ```
 zazastop/
-├── web/                 # proyecto Astro (sitio público)
-│   ├── src/
-│   │   ├── components/  # Nav, Hero, Story, Spotlight, Menu, Visit, Footer
-│   │   ├── layouts/     # Layout.astro
-│   │   ├── pages/       # index.astro
-│   │   ├── styles/      # global.css (paleta de marca)
-│   │   └── products.json
-│   └── public/images/
-│       ├── brand/       # logo + banner
-│       └── products/    # 30 imágenes de producto
-├── public/images/       # copia maestra de imágenes (fuente)
-└── scraper/             # datos crudos + script de extracción Glovo
+├── astro.config.mjs
+├── package.json
+├── tsconfig.json
+├── public/
+│   ├── favicon.svg
+│   └── images/
+│       ├── brand/      # logo + banner
+│       ├── ig/         # carta1/2/3 (fondos checker oficiales)
+│       └── products/   # 30 imágenes producto
+├── src/
+│   ├── components/     # Nav, Hero, Spotlight, Menu, Builder, Pricing, Story, Visit, Footer
+│   ├── layouts/        # Layout.astro
+│   ├── pages/          # index.astro
+│   ├── styles/         # global.css
+│   └── products.json   # menú con precios oficiales en tienda
+└── scraper/            # data Glovo (referencia)
 ```
 
 ## Marca
@@ -36,24 +39,26 @@ zazastop/
 | `--cream`        | `#FFF8EC`    |
 | `--ink`          | `#1A1330`    |
 
-Fuente principal: **Archivo Black** (titulares) + **Inter** (cuerpo).
+Fuente: **Archivo Black** (titulares) + **Inter** (cuerpo).
 
 ## Desarrollo
 
 ```bash
-cd web
 npm install
 npm run dev      # http://localhost:4321
-npm run build
+npm run build    # output: dist/
 npm run preview
 ```
 
+## Despliegue
+
+Build estático en `dist/`. Compatible con cualquier hosting estático
+(Cloudflare Pages, Netlify, Vercel, GitHub Pages…). Comando de build:
+`npm run build`. Output dir: `dist`.
+
 ## Datos
 
-- Menú e imágenes: [Glovo · Zaza Stop Zaragoza](https://glovoapp.com/es/es/zaragoza/stores/zaza-stop-zaragoza)
+- Carta + precios: tomados de la propia carta oficial del local.
+- Imágenes producto: extraídas del listing público de Glovo.
 - Instagram: [@zazastop_](https://www.instagram.com/zazastop_/)
-
-## Créditos
-
-- Restaurante: ZazaStop (Ibra · Mayu · Nilmar)
-- Sitio: scaffolding inicial generado con Claude Code
+- Glovo: [Zaza Stop Zaragoza](https://glovoapp.com/es/es/zaragoza/stores/zaza-stop-zaragoza)

@@ -6,6 +6,9 @@ node_modules/
 # build output
 dist/
 .astro/
+.vercel/
+.netlify/
+.wrangler/
 
 # env / secrets
 .env
