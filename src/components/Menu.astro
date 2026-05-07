@@ -11,9 +11,9 @@ type Product = {
   localImage?: string;
 };
 
-const products = (productsRaw as Product[]).filter(p => p.category !== 'Bebidas');
+const products = productsRaw as Product[];
 
-const order = ['Crousty', 'Tacos', 'Patatas', 'Complementos', 'Postres'];
+const order = ['Crousty', 'Tacos', 'Patatas', 'Complementos', 'Postres', 'Bebidas'];
 const categories = order.filter(c => products.some(p => p.category === c));
 
 function fmt(p: number) {
@@ -25,7 +25,7 @@ function fmt(p: number) {
     <div class="section-head">
       <span class="eyebrow">Carta</span>
       <h2>Nuestro menú</h2>
-      <p>Recién hecho, ingredientes frescos y salsas de la casa. <a href="#precios" style="color:var(--purple);text-decoration:underline;font-weight:700;">Ver bebidas y precios →</a></p>
+      <p>Recién hecho, ingredientes frescos y salsas de la casa. Filtra por categoría.</p>
     </div>
 
     <div class="cats" id="cats">
@@ -35,7 +35,7 @@ function fmt(p: number) {
 
     <div class="grid stagger" id="menu-grid">
       {products.map(p => (
-        <article class="card" data-cat={p.category}>
+        <article class={`card${p.category === 'Bebidas' ? ' card--hidden-default' : ''}`} data-cat={p.category}>
           <div class="card__img">
             {p.localImage && <img src={p.localImage} alt={p.name} loading="lazy" />}
           </div>
@@ -54,13 +54,25 @@ function fmt(p: number) {
 <script>
   const buttons = document.querySelectorAll<HTMLButtonElement>('.cat-btn');
   const cards = document.querySelectorAll<HTMLElement>('#menu-grid .card');
+
+  // Default state: hide Bebidas cards
+  cards.forEach(c => {
+    if (c.dataset.cat === 'Bebidas') c.style.display = 'none';
+  });
+
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
       const cat = btn.dataset.cat;
       cards.forEach(c => {
-        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+        const isBebida = c.dataset.cat === 'Bebidas';
+        if (cat === 'all') {
+          // "Todo" hides Bebidas
+          c.style.display = isBebida ? 'none' : '';
+        } else {
+          c.style.display = c.dataset.cat === cat ? '' : 'none';
+        }
       });
     });
   });

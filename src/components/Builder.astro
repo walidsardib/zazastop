@@ -1,58 +1,123 @@
 ---
 const sizes = [
-  { t: 'Talla M', d: '1 carne · 1 salsa' },
-  { t: 'Talla L', d: '2 carnes · 2 salsas' },
-  { t: 'Talla XL', d: '3 carnes · 3 salsas' }
+  { t: 'M',  sub: 'Talla M',  d: '1 carne · 1 salsa',   img: '/images/products/taco-m.jpg',  price: '6,90€' },
+  { t: 'L',  sub: 'Talla L',  d: '2 carnes · 2 salsas', img: '/images/products/taco-l.jpg',  price: '7,90€' },
+  { t: 'XL', sub: 'Talla XL', d: '3 carnes · 3 salsas', img: '/images/products/taco-xl.jpg', price: '10,90€' }
 ];
-const carnes = ['Pollo Marinado', 'Carne Picada', 'Merguez', 'Cordon Bleu', 'Nuggets', 'Tenders (+1€)', 'Carne Kebab'];
-const salsas = ['Algeriana', 'Chili-Thai', 'Samurai', 'Al Andalus', 'BBQ', 'Brazil', 'Tasty', 'Ketchup', 'Mayonesa', 'Biggie'];
+const carnes = [
+  { n: 'Pollo Marinado', c: '#D4A574' },
+  { n: 'Carne Picada',   c: '#8B3A2D' },
+  { n: 'Merguez',        c: '#B83A2D' },
+  { n: 'Cordon Bleu',    c: '#C9A87A' },
+  { n: 'Nuggets',        c: '#E8B860' },
+  { n: 'Tenders',        c: '#C97D3D', extra: '+1€' },
+  { n: 'Carne Kebab',    c: '#6B3A2A' }
+];
+const salsas = [
+  { n: 'Algeriana',  c: '#C84B2A' },
+  { n: 'Chili-Thai', c: '#D63A2E' },
+  { n: 'Samurai',    c: '#E8DDB5' },
+  { n: 'Al Andalus', c: '#C9A87A' },
+  { n: 'BBQ',        c: '#5C2A1A' },
+  { n: 'Brazil',     c: '#2E8B57' },
+  { n: 'Tasty',      c: '#E89AB3' },
+  { n: 'Ketchup',    c: '#D62828' },
+  { n: 'Mayonesa',   c: '#FFFAEC' },
+  { n: 'Biggie',     c: '#3D2D7A' }
+];
 const extras = ['Cebolla Caramelizada', 'Queso Cheddar', 'Champiñones', 'Jeringuillas de Queso (+2€)', 'Bowl de Queso (+3€)', 'Bacon Pavo', 'Bacon Ternera'];
 const gratinados = ['Mozzarella', 'Queso de Cabra', 'Queso Cheddar'];
 ---
 <section class="builder checker" id="crea-tu-taco">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Hazlo a tu manera</span>
       <h2>Crea tu propio <span class="scribble-circle">taco</span></h2>
-      <p>Tres pasos, infinitas combinaciones. Tú eliges tamaño, carnes y salsas — y le añades todos los extras que quieras.</p>
+      <p>Cuatro pasos. Infinitas combinaciones. Tú mandas.</p>
     </div>
 
-    <div class="builder__steps stagger">
-      <article class="step">
-        <span class="step__num">#1</span>
+    <!-- Step 1: Tamaños -->
+    <div class="bstep reveal">
+      <div class="bstep__head">
+        <span class="bstep__num">1</span>
         <h3>Elige el tamaño</h3>
-        <div class="chips">
-          {sizes.map(s => <span class="chip"><strong>{s.t}</strong> · {s.d}</span>)}
-        </div>
-      </article>
+      </div>
+      <div class="bstep__sizes stagger">
+        {sizes.map(s => (
+          <article class="size-card">
+            <div class="size-card__badge">{s.t}</div>
+            <div class="size-card__img">
+              <img src={s.img} alt={s.sub} loading="lazy" />
+            </div>
+            <div class="size-card__body">
+              <h4>{s.sub}</h4>
+              <p>{s.d}</p>
+              <span class="size-card__price">{s.price}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
 
-      <article class="step">
-        <span class="step__num">#2</span>
+    <!-- Step 2: Carnes -->
+    <div class="bstep reveal">
+      <div class="bstep__head">
+        <span class="bstep__num">2</span>
         <h3>Elige las carnes</h3>
-        <div class="chips">
-          {carnes.map(c => <span class="chip">{c}</span>)}
-        </div>
-      </article>
+      </div>
+      <div class="dot-chips">
+        {carnes.map(c => (
+          <span class="dot-chip">
+            <span class="dot" style={`background:${c.c}`}></span>
+            <span>{c.n}</span>
+            {c.extra && <small class="dot-chip__extra">{c.extra}</small>}
+          </span>
+        ))}
+      </div>
+    </div>
 
-      <article class="step">
-        <span class="step__num">#3</span>
+    <!-- Step 3: Salsas -->
+    <div class="bstep reveal">
+      <div class="bstep__head">
+        <span class="bstep__num">3</span>
         <h3>Elige las salsas</h3>
-        <div class="chips">
-          {salsas.map(s => <span class="chip chip--sauce">{s}</span>)}
-        </div>
-      </article>
+      </div>
+      <div class="dot-chips">
+        {salsas.map(s => (
+          <span class="dot-chip">
+            <span class="dot" style={`background:${s.c};${s.c === '#FFFAEC' ? 'box-shadow:inset 0 0 0 1px #d0c9e0;' : ''}`}></span>
+            <span>{s.n}</span>
+          </span>
+        ))}
+      </div>
+    </div>
 
-      <article class="step">
-        <span class="step__num">#4</span>
-        <h3>Añade extras <small style="font-weight:600;color:#6a5e8a;font-size:13px;">(+1€)</small></h3>
-        <div class="chips" style="margin-bottom:14px;">
+    <!-- Step 4: Extras + photo -->
+    <div class="bstep bstep--split reveal">
+      <div class="bstep__split-img">
+        <img src="/images/products/patatas-con-queso-y-cebolla.png" alt="Extras y gratinados" loading="lazy" />
+        <span class="bstep__split-sticker">+ TOPPINGS</span>
+      </div>
+      <div class="bstep__split-content">
+        <div class="bstep__head">
+          <span class="bstep__num">4</span>
+          <h3>Extras & gratinados</h3>
+        </div>
+        <h5 class="bstep__subhead">Extras <small>(+1€)</small></h5>
+        <div class="chips" style="margin-bottom:16px;">
           {extras.map(e => <span class="chip chip--extra">{e}</span>)}
         </div>
-        <h3 style="font-size:16px;margin-top:18px;">Gratinados <small style="font-weight:600;color:#6a5e8a;font-size:13px;">(+1€)</small></h3>
+        <h5 class="bstep__subhead">Gratinados <small>(+1€)</small></h5>
         <div class="chips">
           {gratinados.map(g => <span class="chip">{g}</span>)}
         </div>
-      </article>
+      </div>
+    </div>
+
+    <div class="builder__cta reveal">
+      <a class="btn btn--yellow" href="https://glovoapp.com/es/es/zaragoza/stores/zaza-stop-zaragoza" target="_blank" rel="noopener">Pídelo en Glovo</a>
+      <a class="btn btn--outline" href="https://www.ubereats.com/es/store/zaza-stop/uV8iuTk-WYmK1vmhvFz-nw" target="_blank" rel="noopener">Pídelo en Uber Eats</a>
+      <a class="btn btn--dark" href="#visita">o pásate por el local</a>
     </div>
   </div>
 </section>
