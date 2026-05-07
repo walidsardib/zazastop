@@ -1,0 +1,272 @@
+[
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/42240805622/5fb85724-4401-484f-ac84-e8d419f608e9.jpg",
+    "name": "Taco (L)",
+    "price": 8.99,
+    "description": "2 Carnes y 2 salsas",
+    "category": "Tacos",
+    "slug": "taco-l",
+    "localImage": "/images/products/taco-l.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/42240805630/2457b885-0d8b-4ebf-b5bc-c1e735024e51.jpg",
+    "name": "Taco (XL)",
+    "price": 12.99,
+    "description": "3 Carnes y 3 salsas",
+    "category": "Tacos",
+    "slug": "taco-xl",
+    "localImage": "/images/products/taco-xl.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/d6fbbf66-13ca-436b-a03f-bb7e15ba9c4c.jpg",
+    "name": "Crousty Normal",
+    "price": 10.9,
+    "description": "Arroz con una salsa secreta con pollo rebosado salsa agridulce con sweet chili, cebolla frita y oregano.",
+    "category": "Crousty",
+    "slug": "crousty-normal",
+    "localImage": "/images/products/crousty-normal.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/f9b1d99f-419b-4424-810c-07ce45dcc67c.jpg",
+    "name": "Crousty Gigante",
+    "price": 15.9,
+    "description": "Arroz con una salsa secreta con pollo rebosado salsa agridulce con sweet chili, cebolla frita y oregano.",
+    "category": "Crousty",
+    "slug": "crousty-gigante",
+    "localImage": "/images/products/crousty-gigante.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/42240805611/c8438141-5be7-4d92-8387-5b100d47564f.jpg",
+    "name": "Taco (M)",
+    "price": 7.99,
+    "description": "1 Carne y 1 salsa",
+    "category": "Tacos",
+    "slug": "taco-m",
+    "localImage": "/images/products/taco-m.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/Dyg5BtxZ/PATATAS-CON-QUESO-Y-CEBOLLA.png",
+    "name": "Patatas Con Queso Y Cebolla",
+    "price": 3.99,
+    "description": "Deliciosas patatas fritas acompañadas de queso fundido y un toque de cebolla que aporta un sabor intenso y equilibrado",
+    "category": "Patatas",
+    "slug": "patatas-con-queso-y-cebolla",
+    "localImage": "/images/products/patatas-con-queso-y-cebolla.png"
+  },
+  {
+    "image": "https://i.postimg.cc/fTK5B68y/PATATAS-NORMALES.png",
+    "name": "Patatas Normales",
+    "price": 2.2,
+    "description": "Clásicas patatas fritas doradas y crujientes, perfectas para disfrutar solas o como acompañamiento",
+    "category": "Patatas",
+    "slug": "patatas-normales",
+    "localImage": "/images/products/patatas-normales.png"
+  },
+  {
+    "image": "https://i.postimg.cc/C57s1q26/Tenders.jpg",
+    "name": "Tenders",
+    "price": 5.9,
+    "description": "Tiras de pechuga de pollo empanadas, extra crujientes por fuera y muy jugosas por dentro",
+    "category": "Complementos",
+    "slug": "tenders",
+    "localImage": "/images/products/tenders.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/TY9QCZty/NUGGETTS.png",
+    "name": "Nuggets",
+    "price": 4.9,
+    "description": "Tiernos bocados de pollo empanado, crujientes por fuera y jugosos por dentro, perfectos para acompañar con tu salsa favorita",
+    "category": "Complementos",
+    "slug": "nuggets",
+    "localImage": "/images/products/nuggets.png"
+  },
+  {
+    "image": "https://i.postimg.cc/vTbvbz05/Chilli-Bites.jpg",
+    "name": "Chilli Bites",
+    "price": 4.9,
+    "description": "Pequeños bocados crujientes rellenos de queso fundido con un toque picante de chili",
+    "category": "Complementos",
+    "slug": "chilli-bites",
+    "localImage": "/images/products/chilli-bites.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/ncZ0KHYT/TIRAMISU-DE-CARAMELO.png",
+    "name": "Tiramisú De Caramelo (330 Ml.)",
+    "price": 5.0,
+    "description": "Suave y cremoso tiramisú con capas de bizcocho y una deliciosa crema con sabor a caramelo, perfecto para los amantes de los postres dulces",
+    "category": "Postres",
+    "slug": "tiramisu-de-caramelo-330-ml",
+    "localImage": "/images/products/tiramisu-de-caramelo-330-ml.png"
+  },
+  {
+    "image": "https://i.postimg.cc/tJkNTxcw/Tiramisu-de-Chocolate.jpg",
+    "name": "Tiramisú De Chocolate (330 Ml.)",
+    "price": 5.0,
+    "description": "Clásico tiramisú con un irresistible toque de chocolate, combinando capas de bizcocho y crema suave para un final dulce perfecto",
+    "category": "Postres",
+    "slug": "tiramisu-de-chocolate-330-ml",
+    "localImage": "/images/products/tiramisu-de-chocolate-330-ml.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/f61f4524-5fed-4509-93ed-5f384ef858d9.jpg",
+    "name": "7up mojito",
+    "price": 2.3,
+    "description": "7up moj",
+    "category": "Bebidas",
+    "slug": "7up-mojito",
+    "localImage": "/images/products/7up-mojito.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/9b72ef13-38c0-4327-8d6c-8f9499da713f.jpg",
+    "name": "Oasis manzana pera",
+    "price": 2.3,
+    "description": "Oasis m",
+    "category": "Bebidas",
+    "slug": "oasis-manzana-pera",
+    "localImage": "/images/products/oasis-manzana-pera.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/be886387-7456-47a5-9d94-13c38a90722b.jpg",
+    "name": "Tropico",
+    "price": 2.3,
+    "description": "Orange",
+    "category": "Bebidas",
+    "slug": "tropico",
+    "localImage": "/images/products/tropico.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/418ee88c-6fca-4658-843c-fe807faad112.jpg",
+    "name": "Oasis frambuesa y fresa",
+    "price": 2.3,
+    "description": "Oasis fr",
+    "category": "Bebidas",
+    "slug": "oasis-frambuesa-y-fresa",
+    "localImage": "/images/products/oasis-frambuesa-y-fresa.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/XqFn3cx1/Coca-Cola-Sabor-Original-lata-330ml-vaso-blanco-New-1.jpg",
+    "name": "Coca-Cola Sabor Original lata 330ml.",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "coca-cola-sabor-original-lata-330ml",
+    "localImage": "/images/products/coca-cola-sabor-original-lata-330ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/FRPRYdXT/Coca-Cola-Zero-Azu-car-lata-330ml-vaso-blanco-1.jpg",
+    "name": "Coca-Cola Zero Azúcar lata 330ml.",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "coca-cola-zero-azucar-lata-330ml",
+    "localImage": "/images/products/coca-cola-zero-azucar-lata-330ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/DZxZKsym/Fanta-Naranja-lata-330ml-vaso-TC-BLANCO-GLOVO-REST.jpg",
+    "name": "Fanta Naranja lata 330ml.",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "fanta-naranja-lata-330ml",
+    "localImage": "/images/products/fanta-naranja-lata-330ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/kgv0dXPm/Nestea-Te-Negro-Limo-n-lata-330ml-BLANCO-GLOVO-REST.png",
+    "name": "Nestea Té Negro Limón lata 330ml.",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "nestea-te-negro-limon-lata-330ml",
+    "localImage": "/images/products/nestea-te-negro-limon-lata-330ml.png"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/42240805620/9ab99ab1-a503-4571-b35a-e31fb7134a31.jpg",
+    "name": "Oasis Tropical (330 Ml.)",
+    "price": 2.3,
+    "description": "Oasis tro",
+    "category": "Bebidas",
+    "slug": "oasis-tropical-330-ml",
+    "localImage": "/images/products/oasis-tropical-330-ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/Rh4T4Rgd/Oasis-Frambuesa.jpg",
+    "name": "Oasis Frambuesa (330 Ml.)",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "oasis-frambuesa-330-ml",
+    "localImage": "/images/products/oasis-frambuesa-330-ml.jpg"
+  },
+  {
+    "image": "https://images.deliveryhero.io/image/global-menu-service/GV_ES/vendor/919624/product/42240805623/8f74ba9b-400d-4c06-ba5b-174019ac76c7.jpg",
+    "name": "Hawai Tropical (330 Ml.)",
+    "price": 2.3,
+    "description": "Hawaii",
+    "category": "Bebidas",
+    "slug": "hawai-tropical-330-ml",
+    "localImage": "/images/products/hawai-tropical-330-ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/prCJTFSB/Poms.jpg",
+    "name": "Poms (330 Ml.)",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "poms-330-ml",
+    "localImage": "/images/products/poms-330-ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/cLkhNfqj/FANTA-FRUTOS-DRAGON.png",
+    "name": "Fanta Frutos Dragón Y Mango (330 Ml.)",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "fanta-frutos-dragon-y-mango-330-ml",
+    "localImage": "/images/products/fanta-frutos-dragon-y-mango-330-ml.png"
+  },
+  {
+    "image": "https://i.postimg.cc/8cNbNHZd/Fanta-Tropical.jpg",
+    "name": "Fanta Tropical (330 Ml.)",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "fanta-tropical-330-ml",
+    "localImage": "/images/products/fanta-tropical-330-ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/WzT7Tn5D/Nestea-Maracuya.jpg",
+    "name": "Nestea Maracuyá (330 Ml.)",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "nestea-maracuya-330-ml",
+    "localImage": "/images/products/nestea-maracuya-330-ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/T1fcf9t4/Orangina.jpg",
+    "name": "Orangina (330 Ml.)",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "orangina-330-ml",
+    "localImage": "/images/products/orangina-330-ml.jpg"
+  },
+  {
+    "image": "https://i.postimg.cc/Bv8gZt4x/CAPRISUN.png",
+    "name": "Capri-Sun Tropical (200 Ml.)",
+    "price": 2.3,
+    "description": "",
+    "category": "Bebidas",
+    "slug": "capri-sun-tropical-200-ml",
+    "localImage": "/images/products/capri-sun-tropical-200-ml.png"
+  },
+  {
+    "image": "https://i.postimg.cc/Kjx5xN0M/Agua.jpg",
+    "name": "Agua (500 Ml.)",
+    "price": 1.8,
+    "description": "Agua embotellada",
+    "category": "Bebidas",
+    "slug": "agua-500-ml",
+    "localImage": "/images/products/agua-500-ml.jpg"
+  }
+]

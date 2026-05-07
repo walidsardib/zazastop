@@ -1,0 +1,22 @@
+---
+const links = [
+  { href: '#historia', label: 'Historia' },
+  { href: '#menu', label: 'Menú' },
+  { href: '#crousty', label: 'Crousty' },
+  { href: '#visita', label: 'Visítanos' }
+];
+---
+<header class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="/images/brand/logo.jpg" alt="ZazaStop" />
+      <span>ZAZASTOP</span>
+    </a>
+    <nav class="nav__links">
+      {links.map(l => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--yellow" href="https://glovoapp.com/es/es/zaragoza/stores/zaza-stop-zaragoza" target="_blank" rel="noopener">Pedir en Glovo</a>
+    </div>
+  </div>
+</header>

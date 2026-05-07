@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+.npm
+.pnpm-debug.log*
+
+# build output
+dist/
+.astro/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+
+# editor
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# scraper artifacts (raw HTML, intermediate JSON)
+scraper/*.html
+scraper/*.txt
+scraper/ig*.json
+scraper/next_data.json

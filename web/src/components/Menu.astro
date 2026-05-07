@@ -1,0 +1,66 @@
+---
+import productsRaw from '../products.json';
+
+type Product = {
+  name: string;
+  description?: string;
+  price: number;
+  category: string;
+  slug: string;
+  localImage?: string;
+};
+
+const products = productsRaw as Product[];
+
+const order = ['Crousty', 'Tacos', 'Patatas', 'Complementos', 'Postres', 'Bebidas'];
+const categories = order.filter(c => products.some(p => p.category === c));
+
+function fmt(p: number) {
+  return p.toFixed(2).replace('.', ',') + ' €';
+}
+---
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Carta</span>
+      <h2>Nuestro menú</h2>
+      <p>Recién hecho, ingredientes frescos y salsas de la casa. Filtra por categoría.</p>
+    </div>
+
+    <div class="cats" id="cats">
+      <button class="cat-btn is-active" data-cat="all">Todo</button>
+      {categories.map(c => <button class="cat-btn" data-cat={c}>{c}</button>)}
+    </div>
+
+    <div class="grid" id="menu-grid">
+      {products.map(p => (
+        <article class="card" data-cat={p.category}>
+          <div class="card__img">
+            {p.localImage && <img src={p.localImage} alt={p.name} loading="lazy" />}
+          </div>
+          <div class="card__body">
+            <span class="card__cat">{p.category}</span>
+            <h3 class="card__title">{p.name}</h3>
+            {p.description && <p class="card__desc">{p.description}</p>}
+            <span class="card__price">{fmt(p.price)}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.cat-btn');
+  const cards = document.querySelectorAll<HTMLElement>('#menu-grid .card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const cat = btn.dataset.cat;
+      cards.forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+      });
+    });
+  });
+</script>
